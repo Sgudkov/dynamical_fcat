@@ -1,3 +1,24 @@
+*----------------------------------------------------------------------*
+*       CLASS lcl_alv DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_alv DEFINITION.
+
+  PUBLIC SECTION.
+
+    METHODS:
+              create_fcat
+                IMPORTING
+                          is_component   TYPE any
+                RETURNING value(rt_fcat) TYPE lvc_t_fcat.
+ENDCLASS.                    "lcl_alv DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_alv IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
 CLASS lcl_alv IMPLEMENTATION.
   METHOD create_fcat.
 
@@ -8,8 +29,8 @@ CLASS lcl_alv IMPLEMENTATION.
 
     FIELD-SYMBOLS:
       <ls_component> TYPE abap_compdescr,
-      <ls_fcat> TYPE lvc_s_fcat,
-      <ls_flist> TYPE dfies.
+      <ls_fcat>      TYPE lvc_s_fcat,
+      <ls_flist>     TYPE dfies.
 
     lo_type_descr = cl_abap_typedescr=>describe_by_data( is_component ).
 
